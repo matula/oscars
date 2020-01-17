@@ -17,7 +17,6 @@ class CreatePeopleTable extends Migration
             $table->smallIncrements('id');
             $table->string('name', 100);
             $table->string('imdb_id', 24);
-            $table->string('role', 24)->comment('actor,writer,composer,director,producer');
         });
     }
 
