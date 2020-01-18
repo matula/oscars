@@ -17,7 +17,6 @@ class CreateMoviesTable extends Migration
             $table->smallIncrements('id');
             $table->string('name', 100);
             $table->string('imdb_id', 24)->nullable();
-            $table->string('url')->nullable();
         });
     }
 

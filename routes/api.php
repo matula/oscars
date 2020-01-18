@@ -18,5 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('categories', function (Request $request) {
-    return \App\Category::with(['nominations.movie', 'nominations.person'])->orderBy('order', 'asc')->get();
+    $categories = \App\Category::with(['nominations.movie', 'nominations.person'])->orderBy('order', 'asc')->get();
+
+    return \App\Http\Resources\CategoryResource::collection($categories);
 });
